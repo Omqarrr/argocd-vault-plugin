@@ -12,7 +12,7 @@ spec:
     repoURL: 'https://github.com/Omqarrr/argocd-vault-plugin'
     targetRevision: HEAD
     plugin:
-      name: argocd-vault-plugin
+      name: argocd-vault-plugin-helm
   project: default
   syncPolicy:
     automated:
