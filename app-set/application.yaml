@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sample-secret
+spec:
+  destination:
+    name: ''
+    namespace: default
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: ./secrets/
+    repoURL: 'https://github.com/Omqarrr/argocd-vault-plugin'
+    targetRevision: HEAD
+    plugin:
+      name: argocd-vault-plugin
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
